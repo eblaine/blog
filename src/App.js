@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import me from './me.jpeg';
 import './App.css';
-import {HashRouter, Route, Redirect, Switch} from 'react-router-dom';
+import {HashRouter, Route, Redirect, Switch, Link} from 'react-router-dom';
 import Post from "./components/Post"
 import Posts from "./components/Posts"
 
@@ -16,7 +16,9 @@ class App extends Component {
             {/*<img src={logo} className="App-logo" alt="logo" />*/}
           {/*</header>*/}
           <header className={"App-header"}>
-            <img src={me} alt={"photo of me"}/>
+            <Link to={"/posts"}>
+              <img src={me} alt={"photo of me"} className={'App-header-photo'}/>
+            </Link>
             <h3>Ellen Blaine</h3>
             <p>Front-end dev and conversational AI designer</p>
           </header>
