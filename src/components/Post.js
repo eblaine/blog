@@ -2,7 +2,7 @@
 import React, {Component} from 'react';
 import Markdown from 'markdown-to-jsx';
 import styled from "styled-components"
-
+import CodeComponent from "./CodeComponent"
 
 /**
  * A generic post
@@ -14,9 +14,9 @@ export default class Post extends Component<PostProps> {
 
     return (
         <div>
-          <Markdown options={options}>
-          {mdFile}
-          </Markdown>
+            <Markdown options={options}>
+            {mdFile}
+            </Markdown>
         </div>
     )
   }
@@ -28,7 +28,6 @@ type PostProps = {
 
 const MainTitle = styled.h1`
   color: #2980b9;
-  border-bottom: 3px solid #333;
 `;
 
 const SectionTitle = styled.h2`
@@ -46,8 +45,8 @@ const SubSectionTitle = styled.h3`
 const ParaText = styled.p`
   color: green;
   text-align: left;
-  margin: 0 20px;
-  line-height: 1.375rem;
+  margin: 10px 20px;
+  line-height: 1.5rem;
 `;
 
 const StrongText = styled.strong`
@@ -66,7 +65,7 @@ const ExtLink = styled.a.attrs({
 `;
 
 const Code = styled.code`
-  color: red;
+
   font-size: 1.125rem;
 `;
 
@@ -101,7 +100,10 @@ const options = {
       component: ExtLink
     },
     code: {
-      component: Code
+      component: CodeComponent,
+      props: {
+        language: 'js'
+      }
     },
     img: {
       component: Image
@@ -110,4 +112,5 @@ const options = {
       component: DividerLine
     }
   }
-}
+};
+

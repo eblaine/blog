@@ -19,8 +19,10 @@ class App extends Component {
             <Link to={"/posts"}>
               <img src={me} alt={"photo of me"} className={'App-header-photo'}/>
             </Link>
-            <h3>Ellen Blaine</h3>
-            <p>Front-end dev and conversational AI designer</p>
+            <div className={'App-header-text'}>
+              <h3>Ellen Blaine</h3>
+              <p>Front-end dev and conversational AI designer</p>
+            </div>
           </header>
 
           <div className={'App-content'}>
