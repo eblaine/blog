@@ -8,6 +8,9 @@ import CodeComponent from "./CodeComponent"
  * A generic post
  */
 
+type PostProps = {
+  match: any
+};
 export default class Post extends Component<PostProps> {
   render() {
     const mdFile = require(`../markdown/${this.props.match.params.md}`);
@@ -22,19 +25,13 @@ export default class Post extends Component<PostProps> {
   }
 }
 
-type PostProps = {
-  match: any
-};
 
 const MainTitle = styled.h1`
-  color: #2980b9;
+  color: #5D71B5;
 `;
 
 const SectionTitle = styled.h2`
-  color: #895fad;
-  border-bottom: 2px dashed #333;
-  text-align: right;
-  margin: 0 20px;
+  margin: 10px 0;
 `;
 
 const SubSectionTitle = styled.h3`
@@ -43,40 +40,28 @@ const SubSectionTitle = styled.h3`
 `;
 
 const ParaText = styled.p`
-  color: green;
   text-align: left;
-  margin: 10px 20px;
+  margin: 10px 0;
   line-height: 1.5rem;
 `;
 
 const StrongText = styled.strong`
-  color: black;
-  padding: 2px;
-  text-decoration: underline;
+  font-weight: bold;
 `;
 
 const ExtLink = styled.a.attrs({
   target: '_blank'
 })`
-  color: #2980b9;
-  &:hover {
-    color: #ffd700;
-  }
+  font-weight: bold;
 `;
 
-const Code = styled.code`
-
-  font-size: 1.125rem;
-`;
 
 const DividerLine = styled.hr`
-  border: 1px solid #2980b9;
+  border: 1px solid #CED9FF;
 `;
 
 const Image = styled.img`
-  border: 5px solid #895fad;
-  border-left: none;
-  border-right: none
+  
 `;
 
 const options = {

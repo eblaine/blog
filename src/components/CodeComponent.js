@@ -6,6 +6,11 @@ import Highlight from "react-highlight.js";
  * Code with syntax highlighting
  */
 
+type CodeComponentProps = {
+  language: string,
+  children: any
+}
+
 export default class CodeComponent extends Component<CodeComponentProps> {
   render() {
     return (
@@ -16,7 +21,3 @@ export default class CodeComponent extends Component<CodeComponentProps> {
   }
 }
 
-type CodeComponentProps = {
-  language: string,
-  children: any
-}
